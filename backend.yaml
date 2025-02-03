@@ -47,6 +47,13 @@
      src: backend.service
      dest: /etc/systemd/system/backend.service 
 
+  - name: ansible to install pymysql
+    ansible.builtin.pip:
+      name:
+      - PyMySQL
+      - cryptography
+      executable: pip3.9
+
   - name: Install mysql client
     ansible.builtin.package:
      name: mysql 
